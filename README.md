@@ -1,5 +1,5 @@
 # LinkedList
-A very lightweight implementation of a doubly linked-list, useful only for projects like arduino programming, where including the standard library is impractical.
+A very lightweight implementation of a doubly linked-list in c++, useful only for projects like arduino programming, where including the standard library is impractical.
 
 The title comments of List.hpp and ListIterator.hpp contain everything you need to know to use this list.
 
