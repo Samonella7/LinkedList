@@ -24,24 +24,22 @@
 #include "ListEntry.hpp"
 #include "ListIterator.hpp"
 
-#include <cstddef>
-
 
 template <class T>
 List<T>::List() {
-	_head = NULL;
-	_tail = NULL;
+	_head = nullptr;
+	_tail = nullptr;
 	_list_size = 0;
 }
 
 template <class T>
 ListIterator<T> List<T>::front() {
-	return ListIterator<T>(this, NULL, _head);
+	return ListIterator<T>(this, nullptr, _head);
 }
 
 template <class T>
 ListIterator<T> List<T>::back() {
-	return ListIterator<T>(this, _tail, NULL);
+	return ListIterator<T>(this, _tail, nullptr);
 }
 
 template <class T>
@@ -53,7 +51,7 @@ template <class T>
 void List<T>::push_back(T new_entry) {
 	ListEntry<T>* new_node = new ListEntry<T>(new_entry);
 	
-	if (_head == NULL) {
+	if (_head == nullptr) {
 		_head = new_node;
 		_tail = new_node;
 		_list_size = 1;
@@ -69,7 +67,7 @@ template <class T>
 void List<T>::push_front(T new_entry) {
 	ListEntry<T>* new_node = new ListEntry<T>(new_entry);
 	
-	if (_head == NULL) {
+	if (_head == nullptr) {
 		_head = new_node;
 		_tail = new_node;
 		_list_size = 1;
@@ -92,13 +90,13 @@ void List<T>::remove(ListEntry<T>* entry) {
 	ListEntry<T>* prev = entry->_prev;
 	ListEntry<T>* next = entry->_next;
 	
-	if (prev != NULL) {
+	if (prev != nullptr) {
 		prev->_next = next;
 	} else {
 		_head = next;
 	}
 	
-	if (next != NULL) {
+	if (next != nullptr) {
 		next->_prev = prev;
 	} else {
 		_tail = prev;

@@ -28,12 +28,10 @@
 #include "ListEntry.hpp"
 #include "List.hpp"
 
-#include <cstddef>
-
 template <class T>
 ListIterator<T>::ListIterator(List<T>* parent, ListEntry<T>* prev, ListEntry<T>* next) {
 	_prev = prev;
-	_current = NULL;
+	_current = nullptr;
 	_next = next;
 	_parent = parent;
 	_valid = false;
@@ -50,17 +48,17 @@ void ListIterator<T>::remove() {
 
 template <class T>
 bool ListIterator<T>::has_next() {
-	return !(_next == NULL);
+	return !(_next == nullptr);
 }
 
 template <class T>
 bool ListIterator<T>::has_prev() {
-	return !(_prev == NULL);
+	return !(_prev == nullptr);
 }
 
 template <class T>
 T ListIterator<T>::next() {
-	if (_next == NULL) {
+	if (_next == nullptr) {
 		throw 1;
 	} else {
 		_valid = true;
@@ -73,7 +71,7 @@ T ListIterator<T>::next() {
 
 template <class T>
 T ListIterator<T>::prev() {
-	if (_prev == NULL) {
+	if (_prev == nullptr) {
 		throw 1;
 	} else {
 		_valid = true;

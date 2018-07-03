@@ -10,14 +10,13 @@
 #ifndef SIMPLE_LIST_ENTRY_DEFS
 #define SIMPLE_LIST_ENTRY_DEFS
 
-#include <cstddef>
 #include "ListEntry.hpp"
 
 template <class T>
 ListEntry<T>::ListEntry(T data) {
 	_data = data;
-	_next = NULL;
-	_prev = NULL;
+	_next = nullptr;
+	_prev = nullptr;
 }
 
 template <class T>
