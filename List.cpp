@@ -109,7 +109,7 @@ void List<T>::remove(ListEntry<T>* entry) {
 template <class T>
 List<T>::~List() {
 	while (_head) {
-		ListEntry<T>* next = _head->next;
+		ListEntry<T>* next = _head->_next;
 		delete _head;
 		_list_size = _list_size - 1;
 		_head = next;

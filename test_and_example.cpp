@@ -90,7 +90,22 @@ int main (int argc, char** argv) {
 	check(0, myList->size());
 	
 	
-	
 	if (success)
-		cout << "No errors" << endl;
+		cout << "No errors so far. Next is a stress test on the destructor. Expect this to take a while, but expect to see 'Finished'." << endl << flush;
+	else 
+		return 0;
+	
+	// Now to test the destructor. boi oh boi.
+	for (int i = 0; i < 5000; i++) {
+		List<unsigned int>* largeList = new List<unsigned int>();
+		for (int j = 0; j < 100000; j++) {
+			largeList->push_front(j);
+		}
+		delete largeList;
+	}
+	// aaaaand use your command line to see if memory usage got too crazy.
+	// If there was a memory leak this would crash most computers.
+	
+	cout << "Finished." << endl;
+	
 }
